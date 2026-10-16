@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataPilot — Ask your data anything</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">◈ DataPilot</div>
+  <div class="sub" id="statusLine">connecting…</div>
+  <nav>
+    <button class="tab on" data-tab="ask">Ask</button>
+    <button class="tab" data-tab="dash">Dashboards</button>
+    <button class="tab" data-tab="schema">Data</button>
+  </nav>
+  <div class="keybox"><label>API key</label>
+    <input id="apiKey" type="password" value="demo-key-123" autocomplete="off"></div>
+</header>
+
+<main>
+  <!-- ASK -->
+  <section id="tab-ask">
+    <div class="card">
+      <h2>Ask your warehouse</h2>
+      <div class="askrow">
+        <input id="q" placeholder="e.g. average price by product">
+        <button id="askBtn">Ask →</button>
+      </div>
+      <div class="chips" id="chips"></div>
+      <p class="hint" id="modeHint"></p>
+    </div>
+    <div class="card hidden" id="answerCard">
+      <div class="ans-head">
+        <h2 id="ansQ"></h2>
+        <button id="saveBtn" class="ghost">＋ Save to dashboard</button>
+      </div>
+      <p class="expl" id="ansExpl"></p>
+      <details><summary>SQL</summary><pre id="ansSql"></pre></details>
+      <div id="ansChart"></div>
+      <div class="tblwrap"><table id="ansTable"></table></div>
+      <p class="meta" id="ansMeta"></p>
+    </div>
+  </section>
+
+  <!-- DASHBOARDS -->
+  <section id="tab-dash" class="hidden">
+    <div class="card">
+      <h2>Team dashboards</h2>
+      <p class="hint">Every card re-runs its SQL live when you open this tab.</p>
+      <div id="dashGrid" class="dashgrid"></div>
+    </div>
+  </section>
+
+  <!-- SCHEMA -->
+  <section id="tab-schema" class="hidden">
+    <div class="card">
+      <h2>What data can I use?</h2>
+      <p class="hint">Live inventory — Unity Catalog on Databricks, or the demo warehouse.</p>
+      <div id="schemaList"></div>
+    </div>
+  </section>
+</main>
+
+<footer>DataPilot v1.0.0 · read-only by design · demo warehouse until Databricks is connected</footer>
+<script src="app.js"></script>
+</body>
+</html>

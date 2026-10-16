@@ -1,0 +1,66 @@
+:root{
+  --bg:#0e1116; --panel:#171c24; --panel2:#1e2430; --line:#2a3140;
+  --txt:#e8ecf1; --mut:#9aa4b2; --acc:#4da3ff; --ok:#3ddc84; --neg:#ff6b6b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{display:flex;align-items:center;gap:14px;padding:12px 20px;
+  border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.brand{font-size:20px;font-weight:800;color:var(--acc)}
+.sub{color:var(--mut);font-size:13px}
+nav{display:flex;gap:6px;margin-left:8px}
+.tab{background:transparent;border:1px solid var(--line);color:var(--mut);
+  border-radius:8px;padding:7px 14px;cursor:pointer;font-size:14px}
+.tab.on{background:var(--panel2);color:var(--txt);border-color:var(--acc)}
+.keybox{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut)}
+.keybox input{background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  border-radius:8px;padding:6px 10px;width:140px}
+main{max-width:1000px;margin:0 auto;padding:22px;display:grid;gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.card h2{margin:0 0 12px;font-size:18px}
+.hidden{display:none!important}
+.askrow{display:flex;gap:10px}
+.askrow input{flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--txt);
+  border-radius:10px;padding:12px 14px;font-size:15px}
+button{background:var(--acc);border:0;color:#06121f;font-weight:700;font-size:15px;
+  border-radius:10px;padding:12px 22px;cursor:pointer;white-space:nowrap}
+button:hover{filter:brightness(1.1)}
+button.ghost{background:var(--panel2);color:var(--txt);font-size:13px;padding:8px 14px;border:1px solid var(--line)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{background:var(--panel2);border:1px solid var(--line);color:var(--mut);border-radius:20px;
+  padding:6px 14px;font-size:13px;cursor:pointer}
+.chip:hover{color:var(--txt);border-color:var(--acc)}
+.hint{color:var(--mut);font-size:13px}
+.ans-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ans-head h2{margin:0}
+.expl{color:var(--mut);font-size:14px}
+details{margin:10px 0}
+summary{cursor:pointer;color:var(--mut);font-size:13px}
+pre{background:#0b0e13;border:1px solid var(--line);border-radius:8px;padding:12px;
+  overflow-x:auto;font-size:13px;color:#9fd0ff}
+.tblwrap{overflow-x:auto;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--mut);font-weight:600;padding:8px;border-bottom:1px solid var(--line);
+  text-transform:uppercase;font-size:11px;letter-spacing:.05em;white-space:nowrap}
+td{padding:8px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+.meta{color:var(--mut);font-size:12px;margin-top:10px}
+.bars{display:grid;gap:7px;margin:14px 0}
+.brow{display:grid;grid-template-columns:190px 1fr 90px;gap:10px;align-items:center;font-size:13px}
+.brow .track{height:12px;background:var(--panel2);border-radius:6px;overflow:hidden}
+.brow .fill{height:100%;background:linear-gradient(90deg,var(--acc),#7cc4ff);border-radius:6px}
+.brow .val{text-align:right;color:var(--mut);font-variant-numeric:tabular-nums}
+.dashgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.dcard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px}
+.dcard h3{margin:0 0 4px;font-size:15px}
+.dcard .dq{color:var(--mut);font-size:12px;margin:0 0 10px}
+.dcard .del{background:transparent;border:1px solid var(--line);color:var(--mut);
+  font-size:12px;padding:4px 10px;border-radius:6px;margin-top:10px}
+.dcard .del:hover{color:var(--neg);border-color:var(--neg)}
+.schema-t{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.schema-t .st-head{background:var(--panel2);padding:10px 14px;font-weight:700;font-size:14px}
+.schema-t .st-head span{color:var(--mut);font-weight:400;font-size:12px;margin-left:8px}
+.schema-t .st-cols{padding:6px 14px 12px;font-size:13px;color:var(--mut);line-height:1.9}
+.schema-t code{background:#0b0e13;padding:2px 7px;border-radius:5px;color:#9fd0ff;font-size:12px}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:18px}
+@media(max-width:700px){.brow{grid-template-columns:110px 1fr 70px}.askrow{flex-direction:column}}
